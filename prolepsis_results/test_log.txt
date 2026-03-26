@@ -1,0 +1,50 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.6, pytest-9.0.2, pluggy-1.6.0 -- <redacted>
+cachedir: .pytest_cache
+rootdir: <redacted>
+configfile: pyproject.toml
+plugins: anyio-4.10.0
+collecting ... collected 40 items
+
+tests/test_engine_mock.py::TestRejectionSamplerWithSync::test_sync_truncates_correctly_all_accepted PASSED [  2%]
+tests/test_engine_mock.py::TestRejectionSamplerWithSync::test_sync_truncates_on_partial_accept PASSED [  5%]
+tests/test_engine_mock.py::TestRejectionSamplerWithSync::test_sync_includes_bonus_from_previous PASSED [  7%]
+tests/test_engine_mock.py::TestRejectionSamplerWithSync::test_acceptance_rate_accumulates PASSED [ 10%]
+tests/test_engine_mock.py::TestRejectionSamplerEdgeCases::test_zero_draft_prob_accepts PASSED [ 12%]
+tests/test_engine_mock.py::TestRejectionSamplerEdgeCases::test_identical_distributions_high_acceptance PASSED [ 15%]
+tests/test_engine_mock.py::TestRejectionSamplerEdgeCases::test_single_token_gamma PASSED [ 17%]
+tests/test_engine_mock.py::TestTritonKernel::test_all_accepted PASSED    [ 20%]
+tests/test_engine_mock.py::TestTritonKernel::test_all_rejected PASSED    [ 22%]
+tests/test_engine_mock.py::TestTritonKernel::test_matches_python_sampler PASSED [ 25%]
+tests/test_integration.py::TestSpeculativeConfig::test_valid_config PASSED [ 27%]
+tests/test_integration.py::TestSpeculativeConfig::test_invalid_gamma PASSED [ 30%]
+tests/test_integration.py::TestSpeculativeConfig::test_invalid_temperature PASSED [ 32%]
+tests/test_integration.py::TestSpeculativeConfig::test_high_gamma_warning PASSED [ 35%]
+tests/test_integration.py::TestSpeculativeConfig::test_get_torch_dtype PASSED [ 37%]
+tests/test_integration.py::TestModelWrappers::test_draft_wrapper_interface PASSED [ 40%]
+tests/test_integration.py::TestModelWrappers::test_target_wrapper_interface PASSED [ 42%]
+tests/test_integration.py::TestEndToEnd::test_generate_produces_output SKIPPED [ 45%]
+tests/test_kv_cache.py::TestDualKVCacheManager::test_initial_state PASSED [ 47%]
+tests/test_kv_cache.py::TestDualKVCacheManager::test_prefill_updates_all PASSED [ 50%]
+tests/test_kv_cache.py::TestDualKVCacheManager::test_drafting_only_updates_draft PASSED [ 52%]
+tests/test_kv_cache.py::TestDualKVCacheManager::test_acceptance_rate PASSED [ 55%]
+tests/test_kv_cache.py::TestDualKVCacheManager::test_reset_clears_all PASSED [ 57%]
+tests/test_kv_cache.py::TestCacheState::test_advance PASSED              [ 60%]
+tests/test_kv_cache.py::TestCacheState::test_truncate PASSED             [ 62%]
+tests/test_kv_cache.py::TestCacheState::test_truncate_noop_if_larger PASSED [ 65%]
+tests/test_rejection_sampler.py::TestRejectionSampler::test_all_accepted PASSED [ 67%]
+tests/test_rejection_sampler.py::TestRejectionSampler::test_all_rejected PASSED [ 70%]
+tests/test_rejection_sampler.py::TestRejectionSampler::test_eos_stops_generation PASSED [ 72%]
+tests/test_rejection_sampler.py::TestRejectionSampler::test_residual_distribution_correct PASSED [ 75%]
+tests/test_rejection_sampler.py::TestRejectionSampler::test_zero_distribution_fallback_avoids_eos_bias PASSED [ 77%]
+tests/test_sampling_utils.py::TestApplySamplingFilters::test_identity_with_defaults PASSED [ 80%]
+tests/test_sampling_utils.py::TestApplySamplingFilters::test_temperature_sharpens PASSED [ 82%]
+tests/test_sampling_utils.py::TestApplySamplingFilters::test_top_k_masks_tokens PASSED [ 85%]
+tests/test_sampling_utils.py::TestApplySamplingFilters::test_top_p_nucleus PASSED [ 87%]
+tests/test_sampling_utils.py::TestApplySamplingFilters::test_top_p_always_keeps_top_1 PASSED [ 90%]
+tests/test_sampling_utils.py::TestApplySamplingFilters::test_combined_top_k_and_top_p PASSED [ 92%]
+tests/test_sampling_utils.py::TestApplySamplingFilters::test_batched_input PASSED [ 95%]
+tests/test_sampling_utils.py::TestApplySamplingFilters::test_2d_batched_input PASSED [ 97%]
+tests/test_sampling_utils.py::TestApplySamplingFilters::test_probabilities_sum_to_one PASSED [100%]
+
+======================== 39 passed, 1 skipped in 12.43s ========================

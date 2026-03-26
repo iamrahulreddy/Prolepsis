@@ -1,0 +1,33 @@
+======================================================================
+Prolepsis Benchmark Results
+======================================================================
+
+Baseline (autoregressive)
+----------------------------------------------------------------------
+  Tokens           31689
+  Mean time        1242.52 s
+  Median time      1242.52 s
+  Time std         0.000 s
+  Throughput       25.5 +/- 0.0 tok/s
+  Latency          39.21 ms/tok
+  GPU allocated    15786 MB
+  GPU reserved     15890 MB
+
+Prolepsis (speculative)
+----------------------------------------------------------------------
+  Tokens           32921
+  Mean time        989.41 s
+  Median time      989.41 s
+  Time std         0.000 s
+  Throughput       33.3 +/- 0.0 tok/s
+  Latency          30.05 ms/tok
+  GPU allocated    19326 MB
+  GPU reserved     19608 MB
+  Acceptance       56.5%
+
+----------------------------------------------------------------------
+Speedup Summary
+----------------------------------------------------------------------
+  Prolepsis vs Baseline    1.30x  PASS
+
+======================================================================

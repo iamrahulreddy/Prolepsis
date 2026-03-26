@@ -1,0 +1,13 @@
+# Normalize line endings and enforce consistent formatting
+* text=auto
+
+# Force LF for shell scripts
+*.sh text eol=lf
+
+# Force LF for Python
+*.py text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.zip binary

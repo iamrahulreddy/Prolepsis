@@ -1,0 +1,94 @@
+{
+  "timestamp_utc": "2026-03-25T13:02:46.024511+00:00",
+  "config": {
+    "draft_model": "Qwen/Qwen3-1.7B",
+    "target_model": "Qwen/Qwen3-8B",
+    "gamma": 5,
+    "temperature": 0.6,
+    "top_p": 1.0,
+    "top_k": 0,
+    "num_prompts": 60,
+    "output_len": 1024,
+    "warmup_runs": 3,
+    "timed_runs": 1,
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "visualize_trace": true,
+    "synchronize_timing": true,
+    "include_assisted": false,
+    "skip_baseline": false,
+    "prompt_file": "robust_prompts.json",
+    "save_dir": "<redacted>",
+    "trace_base": "<redacted>",
+    "theme": "light",
+    "detailed_plots": false
+  },
+  "system": {
+    "timestamp_utc": "2026-03-25T13:02:45.741429+00:00",
+    "platform": "Linux-4.4.0-x86_64-with-glibc2.36",
+    "python_version": "3.12.6",
+    "torch_version": "2.8.0+cu129",
+    "cuda_available": true,
+    "cuda_version": "12.9",
+    "requested_device": "cuda",
+    "resolved_device": "cuda:0",
+    "requested_dtype": "bfloat16",
+    "resolved_dtype": "bfloat16",
+    "gpu_name": "NVIDIA A100-SXM4-40GB",
+    "gpu_memory_gb": 39.49,
+    "gpu_count": 1,
+    "selected_gpu_index": 0,
+    "nvidia_smi": "Wed Mar 25 13:02:45 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.95.05              Driver Version: 580.95.05      CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:91:00.0 Off |                    0 |\n| N/A   41C    P0            168W /  400W |   20129MiB /  40960MiB |     56%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A               1      C   /bin/dumb-init                        20120MiB |\n+-----------------------------------------------------------------------------------------+"
+  },
+  "results": [
+    {
+      "method": "Baseline (autoregressive)",
+      "num_prompts": 60,
+      "total_tokens": 31689,
+      "total_time_sec": 1242.518091537,
+      "median_time_sec": 1242.518091537,
+      "time_std_sec": 0.0,
+      "tokens_per_sec": 25.503854000870586,
+      "throughput_std_tok_s": 0.0,
+      "avg_latency_ms": 39.209760217646505,
+      "memory_mb": 15786.08740234375,
+      "memory_reserved_mb": 15890.0,
+      "acceptance_rate": null,
+      "per_run_times_sec": [
+        1242.518091537
+      ],
+      "per_run_tokens": [
+        31689
+      ],
+      "per_run_throughput_tok_s": [
+        25.503854000870586
+      ]
+    },
+    {
+      "method": "Prolepsis (speculative)",
+      "num_prompts": 60,
+      "total_tokens": 32921,
+      "total_time_sec": 989.4137952290002,
+      "median_time_sec": 989.4137952290002,
+      "time_std_sec": 0.0,
+      "tokens_per_sec": 33.2732373034888,
+      "throughput_std_tok_s": 0.0,
+      "avg_latency_ms": 30.0541841143647,
+      "memory_mb": 19326.08056640625,
+      "memory_reserved_mb": 19608.0,
+      "acceptance_rate": 0.5653041803031358,
+      "per_run_times_sec": [
+        989.4137952290002
+      ],
+      "per_run_tokens": [
+        32921
+      ],
+      "per_run_throughput_tok_s": [
+        33.2732373034888
+      ]
+    }
+  ],
+  "speedups": {
+    "Prolepsis (speculative)": 1.3046356563346466
+  }
+}
