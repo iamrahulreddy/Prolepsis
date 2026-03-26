@@ -3,6 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![CI](https://img.shields.io/github/actions/workflow/status/iamrahulreddy/Prolepsis/test.yml?branch=main&label=CI)](https://github.com/iamrahulreddy/Prolepsis/actions)
+[![PyTorch 2.0+](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org)
 
 **An accessible implementation of Speculative Decoding (Leviathan et al.) that accelerates LLM inference while perfectly preserving the original model's output distribution.**
 
@@ -118,11 +119,10 @@ If this implementation or its optimization strategies inform your own research o
 
 ```bibtex
 @misc{prolepsis2026,
-  author = {Muskula, Rahul},
-  title = {Prolepsis: Exact Output Speculative Decoding for LLMs},
-  year = {2026},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/iamrahulreddy/Prolepsis}}
+  author       = {Muskula, Rahul},
+  title        = {Prolepsis: Exact Output Speculative Decoding for {LLMs}},
+  year         = {2026},
+  howpublished = {\url{https://github.com/iamrahulreddy/Prolepsis}},
+  note         = {Version 1.0.0. Released 2026-03-25}
 }
 ```
